@@ -8,7 +8,7 @@ import scraperwiki
 import StringIO
 
 # Parameters for the scraper: stations, radius etc.
-stations = [ {'Beckenham': '5E126'}, {'Chester': ':2024'},
+stations = [ {'Beckenham': '%5E126'}, {'Chester': ':2024'},
 {'Chippenham': '2069'} ]
 
 MIN_PRICE = 200000
@@ -100,7 +100,7 @@ for station in stations:
     station_name = station.keys()[0].title()
     print 'Scraping Station %s' % station_name
     station_id = station.values()[0]
-    url1 = '/property-for-sale/find.html?searchType=SALE&locationIdentifier=REGION% %s&minPrice=%s&maxPrice=%s' % (station_id, MIN_PRICE, MAX_PRICE)
+    url1 = '/property-for-sale/find.html?searchType=SALE&locationIdentifier=REGION%s&minPrice=%s&maxPrice=%s' % (station_id, MIN_PRICE, MAX_PRICE)
     url2 = '&minBedrooms=%s&displayPropertyType=houses&oldDisplayPropertyType=houses&radius=%s' % (MIN_BEDROOMS, RADIUS_MILES)
     # displayPropertyType=detachedshouses
     INITIAL_URL = url1 + url2
