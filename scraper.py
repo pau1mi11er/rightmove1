@@ -8,7 +8,7 @@ import scraperwiki
 import StringIO
 
 # Parameters for the scraper: stations, radius etc.
-stations = [ {'Beckenham':5E126}, {'Chester':2024},
+stations = [ {'Beckenham''5E126'}, {'Chester':2024},
 {'Chippenham': 2069} ]
 
 MIN_PRICE = 200000
