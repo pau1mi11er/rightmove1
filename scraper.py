@@ -30,7 +30,7 @@ DOMAIN = 'http://www.rightmove.co.uk'
 
 def scrape_individual_house(house_url, town):
     HOUSE_URL = (DOMAIN + house_url).split('/svr/')[0]
-    print 'Scraping %s' % HOUSE_URL
+    print 'Scraping House %s' % HOUSE_URL
     house_html = scraperwiki.scrape(HOUSE_URL)
     house_parser = etree.HTMLParser()
     house_tree = etree.parse(StringIO.StringIO(house_html), house_parser)
@@ -62,7 +62,7 @@ def scrape_individual_house(house_url, town):
         else:
             map_img = ''
         house['title'] = "%s - %s, %s, %s from station" % (title, town, price, distance)
-        #print 'HOUSE FOUND! %s, %s ' % (house['title'], HOUSE_URL)
+        print 'HOUSE FOUND! %s, %s ' % (house['title'], HOUSE_URL)
         item_text = '<a href="' + HOUSE_URL + '">' + image_url + '</a>'
         #item_text += '<div style="position:relative;">'
         item_text += '<a href="' + HOUSE_URL + '">' + map_img + '</a>'
@@ -98,7 +98,7 @@ def scrape_results_page(results_url, town, initial=False):
 # Go through each station: scrape each set of results in turn. 
 for station in stations:
     station_name = station.keys()[0].title()
-    print 'Scraping %s' % station_name
+    print 'Scraping Station %s' % station_name
     station_id = station.values()[0]
     url1 = '/property-for-sale/find.html?locationIdentifier=STATION^%s&minPrice=%s&maxPrice=%s' % (station_id, MIN_PRICE, MAX_PRICE)
     url2 = '&minBedrooms=%s&displayPropertyType=houses&oldDisplayPropertyType=houses&radius=%s' % (MIN_BEDROOMS, RADIUS_MILES)
