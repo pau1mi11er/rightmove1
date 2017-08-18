@@ -104,4 +104,5 @@ for station in stations:
     url2 = '&minBedrooms=%s&displayPropertyType=houses&oldDisplayPropertyType=houses&radius=%s' % (MIN_BEDROOMS, RADIUS_MILES)
     # displayPropertyType=detachedshouses
     INITIAL_URL = url1 + url2
+    print 'Initial URL %s' % INITIAL_URL
     scrape_results_page(INITIAL_URL, town=station_name, initial=True)
