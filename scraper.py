@@ -83,7 +83,7 @@ def scrape_individual_house(house_url, town):
 def scrape_results_page(results_url, town, initial=False):
     results_url = DOMAIN + results_url
     print 'Domain %s' % results_url
-    html = scraperwiki.scrape('www.rightmove.co.uk/property-for-sale/find.html?searchType=SALE&locationIdentifier=REGION%5E126')
+    html = scraperwiki.scrape('https://www.rightmove.co.uk/property-for-sale/find.html?searchType=SALE&locationIdentifier=REGION%5E126')
     #html = scraperwiki.scrape(results_url)
     print 'here'
     parser = etree.HTMLParser()
