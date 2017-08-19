@@ -12,7 +12,7 @@ stations = [ {'Beckenham': '%5E126'}, {'Chester': ':2024'},
 {'Chippenham': '2069'} ]
 
 MIN_PRICE = 200000
-MAX_PRICE = 310000
+MAX_PRICE = 300000
 MIN_BEDROOMS = 2
 RADIUS_MILES = 3.0
 stop_phrases = [ "views over the garden",
@@ -103,7 +103,7 @@ for station in stations:
     print 'Scraping Station %s' % station_name
     station_id = station.values()[0]
     url1 = '/property-for-sale/find.html?searchType=SALE&locationIdentifier=REGION%s&minPrice=%s&maxPrice=%s' % (station_id, MIN_PRICE, MAX_PRICE)
-    url2 = '&minBedrooms=%s&displayPropertyType=houses&oldDisplayPropertyType=houses&radius=%s' % (MIN_BEDROOMS, RADIUS_MILES)
+    url2 = '&minBedrooms=%s&displayPropertyType=houses&radius=%s' % (MIN_BEDROOMS, RADIUS_MILES)
     # displayPropertyType=detachedshouses
     INITIAL_URL = url1 + url2
     print 'Initial URL %s' % INITIAL_URL
