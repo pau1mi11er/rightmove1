@@ -84,6 +84,7 @@ def scrape_results_page(results_url, town, initial=False):
     results_url = DOMAIN + results_url
     print 'Domain %s' % results_url
     html = scraperwiki.scrape(results_url)
+    print 'here'
     parser = etree.HTMLParser()
     tree = etree.parse(StringIO.StringIO(html), parser)
     house_links = tree.xpath('//ol[@id="summaries"]//a[starts-with(text(), "More details")]/@href')
